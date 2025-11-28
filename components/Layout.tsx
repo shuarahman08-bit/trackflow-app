@@ -2,12 +2,15 @@ import React, { ReactNode } from 'react';
 
 interface LayoutProps {
   children: ReactNode;
+  onLogout?: () => void;
 }
 
-export default const Layout: React.FC<LayoutProps> = ({ children }) => {  return (
+const Layout: React.FC<LayoutProps> = ({ children, onLogout }) => {
+  return (
     <div className="layout">
       <header>
         <h1>Track Flow</h1>
+        {onLogout && <button onClick={onLogout}>Logout</button>}
       </header>
       <main>
         {children}
@@ -18,3 +21,5 @@ export default const Layout: React.FC<LayoutProps> = ({ children }) => {  return
     </div>
   );
 };
+
+export default Layout;
