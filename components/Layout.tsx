@@ -4,8 +4,7 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-export const Layout: React.FC<LayoutProps> = ({ children }) => {
-  return (
+export default const Layout: React.FC<LayoutProps> = ({ children }) => {  return (
     <div className="layout">
       <header>
         <h1>Track Flow</h1>
